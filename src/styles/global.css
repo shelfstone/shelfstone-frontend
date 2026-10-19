@@ -74,7 +74,7 @@ p {
 }
 
 .section {
-  padding-block: clamp(3.5rem, 8vw, 8rem);
+  padding-block: clamp(3rem, 6vw, 5.5rem);
 }
 
 /* Small uppercase labels: section numbers, table heads, box titles */
