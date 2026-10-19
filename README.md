@@ -54,10 +54,9 @@ Every push to `main` is published by `.github/workflows/deploy.yml`. CI
 and on `main`; `main` is protected and only accepts changes through pull requests that pass CI.
 New issues are assigned automatically (`.github/workflows/auto-assign.yml`).
 
-- Live at https://shelfstone.github.io/website/
-- The site is built for the `/website/` sub-path. To move to a custom domain such as
-  shelfstone.com: add the domain in the repo's Settings → Pages, point its DNS at GitHub Pages,
-  and set the repository variable `BASE_PATH` to `/` (Settings → Secrets and variables →
-  Actions → Variables).
+- Live at https://shelfstone.github.io/ (the repo is named `shelfstone.github.io`, so GitHub
+  serves it from the root).
+- To move to a custom domain such as shelfstone.com: add the domain in the repo's Settings →
+  Pages and point its DNS at GitHub Pages. No code change is needed.
 - `dist/404.html` is a copy of `index.html`, so direct visits to `/privacy` work, and the old
   `/wanted` link redirects to the wanted list on the home page.

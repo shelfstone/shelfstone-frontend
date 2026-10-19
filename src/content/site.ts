@@ -9,12 +9,9 @@ export const site = {
   year: 2026,
 } as const;
 
-/** Files in public/, prefixed with the base path the site is served from. */
-const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`;
-
 export const templateFiles = {
-  xlsx: publicFile("files/shelfstone-stock-list.xlsx"),
-  csv: publicFile("files/shelfstone-stock-list.csv"),
+  xlsx: "/files/shelfstone-stock-list.xlsx",
+  csv: "/files/shelfstone-stock-list.csv",
 } as const;
 
 export function mailto(subject: string): string {
