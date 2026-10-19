@@ -47,13 +47,14 @@ Geist, Geist Mono) are self-hosted from npm, so no requests go to Google Fonts.
 - Confirm the promises in the copy: "reply within two working days", "from a few cases to full
   pallets".
 
-## Hosting (Cloudflare Pages)
+## Hosting (GitHub Pages)
 
-Connect this repo in Cloudflare → Workers & Pages → Create → Pages → Connect to Git:
+Every push to `main` deploys the site with `.github/workflows/deploy.yml` (lint, format check,
+type-check, build, publish). Pull requests run the same checks without deploying.
 
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Environment variable: `NODE_VERSION` = `20` (or newer)
-
-Then add the custom domain `shelfstone.com`. Pages serves `index.html` for every path, so the
-`/wanted` and `/privacy` routes work on direct visits too.
+- Live at https://shelfstone.github.io/website/
+- The site is built for the `/website/` sub-path. To move to a custom domain such as
+  shelfstone.com: add the domain in the repo's Settings → Pages, point its DNS at GitHub Pages,
+  and set the repository variable `BASE_PATH` to `/` (Settings → Secrets and variables →
+  Actions → Variables).
+- `dist/404.html` is a copy of `index.html`, so direct visits to `/wanted` and `/privacy` work.

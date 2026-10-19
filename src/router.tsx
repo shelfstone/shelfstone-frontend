@@ -6,26 +6,30 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { WantedPage } from "./pages/WantedPage";
 
-export const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      {
-        path: "/wanted",
-        element: <WantedPage />,
-        handle: { title: "Wanted list", footerNote: wantedTrademarks } satisfies RouteHandle,
-      },
-      {
-        path: "/privacy",
-        element: <PrivacyPage />,
-        handle: { title: "Privacy" } satisfies RouteHandle,
-      },
-      {
-        path: "*",
-        element: <NotFoundPage />,
-        handle: { title: "Not found" } satisfies RouteHandle,
-      },
-    ],
-  },
-]);
+export const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { path: "/", element: <HomePage /> },
+        {
+          path: "/wanted",
+          element: <WantedPage />,
+          handle: { title: "Wanted list", footerNote: wantedTrademarks } satisfies RouteHandle,
+        },
+        {
+          path: "/privacy",
+          element: <PrivacyPage />,
+          handle: { title: "Privacy" } satisfies RouteHandle,
+        },
+        {
+          path: "*",
+          element: <NotFoundPage />,
+          handle: { title: "Not found" } satisfies RouteHandle,
+        },
+      ],
+    },
+  ],
+  // Routes are relative to the base path the site is served from (e.g. /website/).
+  { basename: import.meta.env.BASE_URL },
+);
