@@ -1,0 +1,77 @@
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+/* Foil-bordered contact card */
+.card {
+  padding: 1px;
+  border-radius: var(--radius-lg);
+  background: var(--holo);
+}
+
+.cardInner {
+  display: grid;
+  gap: 1.1rem;
+  padding: clamp(1.4rem, 3vw, 1.8rem);
+  border-radius: calc(var(--radius-lg) - 1px);
+  background: var(--panel);
+}
+
+.cardInner :global(.eyebrow) {
+  margin: 0;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.email {
+  min-width: 0;
+  color: var(--text);
+  font: 500 var(--step-1) / 1.2 var(--f-mono);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.55rem 1.25rem;
+  margin: 0;
+  font-size: var(--step--1);
+}
+
+.facts dt {
+  padding-top: 0.1rem;
+  color: var(--muted);
+  font: 500 0.78rem / 1.6 var(--f-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.1rem;
+  }
+
+  .facts dd + dt {
+    margin-top: 0.6rem;
+  }
+}

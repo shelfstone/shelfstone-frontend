@@ -1,0 +1,156 @@
+/* A 1px foil border: the gradient shows through the padding around the inner panel. */
+.label {
+  width: 100%;
+  max-width: 34rem;
+  min-width: 0;
+  padding: 1px;
+  border-radius: var(--radius-lg);
+  background: var(--holo);
+  box-shadow: 0 30px 80px -30px rgb(122 140 255 / 55%);
+  transform: rotate(-1.5deg);
+}
+
+.inner {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem 1.35rem 1.1rem;
+  border-radius: calc(var(--radius-lg) - 1px);
+  background: var(--panel);
+}
+
+/* Soft foil wash */
+.inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--holo-soft);
+  pointer-events: none;
+}
+
+/* Scanner line sweeping down and back */
+.inner::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--scan), #a99cff, transparent);
+  box-shadow: 0 0 18px 4px rgb(122 242 224 / 35%);
+  opacity: 0.85;
+  pointer-events: none;
+  animation: scan 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes scan {
+  50% {
+    transform: translateY(330px);
+  }
+}
+
+.head,
+.items,
+.foot {
+  position: relative;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.head strong {
+  font: 600 0.9rem / 1 var(--f-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font: 500 0.72rem / 1 var(--f-mono);
+  white-space: nowrap;
+}
+
+.live::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--scan);
+  box-shadow: 0 0 0 4px rgb(122 242 224 / 18%);
+}
+
+.items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+
+.items td {
+  padding: 0.62rem 0;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.items td:first-child {
+  padding-right: 1rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.foot a {
+  color: var(--text);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.foot a:hover {
+  color: var(--signal);
+}
+
+.barcode {
+  flex: none;
+  width: 120px;
+  height: 30px;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+/* Small phones: the label sits straight and the UPC stacks over the product name */
+@media (max-width: 420px) {
+  .label {
+    transform: none;
+  }
+
+  .items tr {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .items td {
+    padding: 0;
+    border-top: 0;
+  }
+
+  .barcode {
+    width: 90px;
+  }
+}

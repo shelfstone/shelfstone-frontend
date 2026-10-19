@@ -1,0 +1,48 @@
+.footer {
+  padding-block: 2.5rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.inner {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  font: 600 0.95rem / 1 var(--f-display);
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+}
+
+.nav a {
+  color: var(--muted);
+}
+
+.fine {
+  max-width: 72ch;
+  font-size: 0.8rem;
+}

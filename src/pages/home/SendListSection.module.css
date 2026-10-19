@@ -1,0 +1,30 @@
+.intro {
+  margin-top: 1rem;
+}
+
+.tableWrap {
+  margin-top: 2rem;
+}
+
+.fields {
+  min-width: 34rem;
+  font-size: var(--step--1);
+}
+
+/* Row headers read as the field names */
+.fields tbody th {
+  background: transparent;
+  color: var(--text);
+  font: 600 var(--step--1) / 1.6 var(--f-body);
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.example {
+  color: var(--muted);
+}
+
+.cta {
+  margin-top: 1.5rem;
+}

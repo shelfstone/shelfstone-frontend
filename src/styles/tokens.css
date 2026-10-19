@@ -1,0 +1,88 @@
+/* Design tokens. Dark-first: a deep ink field with one holographic foil (the authenticity
+   sticker on genuine goods) reserved for the wanted label, the UPC ticker and main buttons.
+   The pearl light theme redefines the same tokens. */
+:root {
+  --void: #080a1c;
+  --panel: #0f1330;
+  --panel-2: #151a3d;
+  --line: #262c55;
+  --text: #eceeff;
+  --muted: #9298c4;
+  --signal: #8ea0ff;
+  --on-holo: #0b0d22;
+  --grid: rgb(142 160 255 / 9%);
+  --todo: #5c4a17;
+  --holo: linear-gradient(115deg, #7af2e0 0%, #a99cff 34%, #ffc3e6 62%, #ffe6a3 100%);
+  --holo-ink: var(--holo);
+  --holo-soft: linear-gradient(
+    115deg,
+    rgb(122 242 224 / 16%),
+    rgb(169 156 255 / 16%) 40%,
+    rgb(255 195 230 / 14%) 70%,
+    rgb(255 230 163 / 12%)
+  );
+  --holo-vertical: linear-gradient(180deg, #7af2e0, #a99cff, #ffc3e6, #ffe6a3);
+  --scan: #7af2e0;
+  --glow: rgb(169 156 255 / 60%);
+
+  --f-display: "Unbounded Variable", "Arial Black", Arial, sans-serif;
+  --f-body: "Geist Variable", "Segoe UI", Helvetica, Arial, sans-serif;
+  --f-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem);
+  --step-3: clamp(2rem, 1rem + 4.6vw, 4.4rem);
+
+  --wrap: 74rem;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --header-h: 4.25rem;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --void: #eef0f8;
+    --panel: #ffffff;
+    --panel-2: #f2f3fb;
+    --line: #d8dbef;
+    --text: #0b0e26;
+    --muted: #555b80;
+    --signal: #3343e0;
+    --grid: rgb(51 67 224 / 7%);
+    --todo: #f6e3a8;
+    --holo-ink: linear-gradient(115deg, #0f9e8f 0%, #5b47f0 38%, #d2418f 70%, #c0820a 100%);
+    --holo-soft: linear-gradient(
+      115deg,
+      rgb(122 242 224 / 28%),
+      rgb(169 156 255 / 26%) 40%,
+      rgb(255 195 230 / 26%) 70%,
+      rgb(255 230 163 / 24%)
+    );
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --void: #eef0f8;
+  --panel: #ffffff;
+  --panel-2: #f2f3fb;
+  --line: #d8dbef;
+  --text: #0b0e26;
+  --muted: #555b80;
+  --signal: #3343e0;
+  --grid: rgb(51 67 224 / 7%);
+  --todo: #f6e3a8;
+  --holo-ink: linear-gradient(115deg, #0f9e8f 0%, #5b47f0 38%, #d2418f 70%, #c0820a 100%);
+  --holo-soft: linear-gradient(
+    115deg,
+    rgb(122 242 224 / 28%),
+    rgb(169 156 255 / 26%) 40%,
+    rgb(255 195 230 / 26%) 70%,
+    rgb(255 230 163 / 24%)
+  );
+  color-scheme: light;
+}

@@ -1,0 +1,100 @@
+.route {
+  --dot: 20px;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The route line through the stops */
+.route::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--dot) / 2 - 1px);
+  left: calc(var(--dot) / 2);
+  right: calc(var(--dot) / 2);
+  height: 2px;
+  background: var(--holo);
+  opacity: 0.7;
+}
+
+.stop {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  padding-top: calc(var(--dot) + 1.4rem);
+}
+
+.stop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dot);
+  height: var(--dot);
+  border: 2px solid var(--signal);
+  border-radius: 50%;
+  background: var(--void);
+}
+
+.stop:last-child::before {
+  border-color: transparent;
+  background: var(--holo);
+}
+
+.stop p {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.stopLabel {
+  color: var(--muted);
+  font: 500 0.72rem / 1 var(--f-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Tablets: two rows of two, without the horizontal line */
+@media (max-width: 1000px) {
+  .route {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.25rem;
+  }
+
+  .route::before {
+    display: none;
+  }
+}
+
+/* Phones: the route runs down the left edge */
+@media (max-width: 600px) {
+  .route {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    padding-left: calc(var(--dot) + 1rem);
+  }
+
+  .route::before {
+    display: block;
+    top: calc(var(--dot) / 2);
+    bottom: calc(var(--dot) / 2);
+    left: calc(var(--dot) / 2 - 1px);
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: var(--holo-vertical);
+  }
+
+  .stop {
+    padding-top: 0;
+  }
+
+  .stop::before {
+    left: calc(-1 * (var(--dot) + 1rem));
+  }
+}
