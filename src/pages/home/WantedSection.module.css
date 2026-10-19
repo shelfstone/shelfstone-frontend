@@ -34,7 +34,7 @@
 }
 
 .table td {
-  padding-block: 1.6rem;
+  padding-block: 1.25rem;
   border-bottom: 1px solid var(--line);
   vertical-align: baseline;
 }
@@ -42,13 +42,13 @@
 .upc {
   width: 1%;
   padding-right: clamp(1.25rem, 3vw, 2.5rem);
-  font: 600 clamp(1.5rem, 1.1rem + 1.2vw, 2.15rem) / 1 var(--f-display);
+  font: 600 clamp(1.4rem, 1.1rem + 0.8vw, 1.8rem) / 1 var(--f-display);
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .product {
-  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 1rem + 0.35vw, 1.35rem);
 }
 
 .size {

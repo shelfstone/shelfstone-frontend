@@ -33,12 +33,12 @@
   display: grid;
   align-content: start;
   justify-items: start;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .number {
   color: var(--accent-ink);
-  font: 600 1.35rem / 1 var(--f-body);
+  font: 600 1.2rem / 1 var(--f-body);
   letter-spacing: 0.06em;
 }
 

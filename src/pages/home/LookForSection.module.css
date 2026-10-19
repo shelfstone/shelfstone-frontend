@@ -1,19 +1,19 @@
 .lede {
   max-width: 40rem;
-  font-size: clamp(1.2rem, 1rem + 0.75vw, 1.7rem);
+  font-size: clamp(1.15rem, 1rem + 0.45vw, 1.45rem);
   line-height: 1.55;
 }
 
 /* Spec sheet: a label column and hairlines between rows */
 .criteria {
-  margin: clamp(2.5rem, 5vw, 4.25rem) 0 0;
+  margin: clamp(2rem, 4vw, 3.25rem) 0 0;
 }
 
 .criterion {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.15fr);
   gap: 0.5rem 1.5rem;
-  padding-block: 1.5rem;
+  padding-block: 1.2rem;
   border-top: 1px solid var(--line);
 }
 

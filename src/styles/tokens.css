@@ -20,18 +20,19 @@
   --f-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
   --f-body: "Barlow", "Segoe UI", Helvetica, Arial, sans-serif;
 
-  /* Sizes reach the design's values at its 1296px frame and shrink on smaller screens */
+  /* Sizes grow with the screen's width, and the largest also stop growing on short screens,
+     so a laptop shows the headline, intro and both paths without scrolling */
   --step--1: clamp(0.875rem, 0.8rem + 0.35vw, 1.125rem); /* labels */
   --step-0: 1.125rem; /* small text */
   --step-1: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); /* running text */
-  --step-2: clamp(2.25rem, 1.2rem + 3.2vw, 3.6rem); /* section titles */
-  --step-3: clamp(2.75rem, 0.5rem + 8.6vw, 7.6rem); /* hero */
-  --step-h3: clamp(1.5rem, 1.2rem + 0.8vw, 2.2rem);
+  --step-2: clamp(2rem, 1.2rem + 2.2vw, 3rem); /* section titles */
+  --step-3: clamp(2.5rem, min(1rem + 4.6vw, 10vh), 6rem); /* hero */
+  --step-h3: clamp(1.4rem, 1.2rem + 0.6vw, 1.85rem);
 
   --wrap: 82rem;
   --gutter: clamp(20px, 5vw, 64px);
-  --header-h: 6.5rem;
-  --section-space: clamp(3.5rem, 8vw, 8.5rem);
+  --header-h: 4.75rem;
+  --section-space: clamp(3rem, 6vw, 6rem);
   --mark: 14px; /* crop mark size */
 
   color-scheme: light;
