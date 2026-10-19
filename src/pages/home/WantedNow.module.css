@@ -1,5 +1,7 @@
+/* Sized by its own width: it sits beside the headline on wide screens, full width below it
+   on smaller ones */
 .box {
-  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  container-type: inline-size;
 }
 
 .head {
@@ -61,7 +63,18 @@
   background: var(--chip);
 }
 
-@media (max-width: 600px) {
+@container (max-width: 40rem) {
+  .item,
+  .more {
+    font-size: 1.25rem;
+  }
+
+  .item {
+    grid-template-columns: 8rem minmax(0, 1fr);
+  }
+}
+
+@container (max-width: 30rem) {
   .title,
   .updated,
   .item,
@@ -72,6 +85,5 @@
   .item {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.1rem;
-    font-size: var(--step-0);
   }
 }

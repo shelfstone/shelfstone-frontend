@@ -47,8 +47,12 @@
   color: var(--accent-ink);
 }
 
+/* Smaller than the page's buttons, so its crop marks stay inside the header bar */
 .cta {
+  min-height: 2.9rem;
   margin-left: 0.25rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 1.3rem;
 }
 
 .menuButton {
