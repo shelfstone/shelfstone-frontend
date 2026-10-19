@@ -1,19 +1,19 @@
 .head {
-  padding-block: clamp(3rem, 7vw, 5.5rem) 2rem;
-}
-
-.head::before {
-  mask-image: linear-gradient(180deg, #000, transparent);
+  padding-block: clamp(3.5rem, 9vw, 7rem) 2.5rem;
 }
 
 .inner {
   display: grid;
   justify-items: start;
-  gap: 1rem;
+  gap: 1.75rem;
 }
 
-.inner :global(.eyebrow) {
-  margin-bottom: 0;
+.kicker {
+  justify-self: stretch;
+  max-width: none;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--accent-ink);
 }
 
 .inner :global(.actions) {

@@ -21,22 +21,22 @@ Node 20 or newer.
 | Path                    | What it is                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `src/content/`          | All site text and data: company facts (`site.ts`), the wanted list (`wanted.ts`), home page lists (`home.ts`) |
-| `src/pages/`            | One component per page; the home page's sections are in `src/pages/home/`                                     |
+| `src/pages/`            | The home page (one page of sections 01–06, in `src/pages/home/`), privacy and 404                             |
 | `src/layout/`           | Header (with the phone menu), footer and the shared page layout                                               |
-| `src/components/`       | Small reusable pieces: logo, barcode, button links, copy button, page header                                  |
-| `src/styles/tokens.css` | Colours, fonts and type scale for the dark (default) and light themes                                         |
-| `src/styles/global.css` | Base styles and the few shared classes (`.wrap`, `.btn`, `.eyebrow`, tables)                                  |
+| `src/components/`       | Small reusable pieces: crop marks, button links, section headings, logo, copy button                          |
+| `src/styles/tokens.css` | Colours, fonts and type scale                                                                                 |
+| `src/styles/global.css` | Base styles and the few shared classes (`.wrap`, `.btn`, `.label`, `.frame`, tables)                          |
 | `public/files/`         | The stock list template suppliers download (Excel and CSV)                                                    |
 
-Each component keeps its own styles in a `*.module.css` file next to it. Fonts (Unbounded,
-Geist, Geist Mono) are self-hosted from npm, so no requests go to Google Fonts.
+Each component keeps its own styles in a `*.module.css` file next to it. Fonts (Barlow and
+Barlow Condensed) are self-hosted from npm, so no requests go to Google Fonts.
 
 ## Common edits
 
-- **Wanted list:** edit `src/content/wanted.ts` and update `wantedUpdated`. The home page label,
-  the ticker and the wanted page all read from it.
+- **Wanted list:** edit `src/content/wanted.ts` and update `wantedUpdated`. The "Wanted now" box
+  under the hero and section 04 both read from it.
 - **Company details:** fill `lastName`, `legalName` and `address` in `src/content/site.ts`. While
-  they are `null` the site shows yellow placeholders.
+  they are `null` the site shows highlighted placeholders.
 - **Email address:** `email` in `src/content/site.ts`.
 
 ## Before launch
@@ -59,4 +59,5 @@ New issues are assigned automatically (`.github/workflows/auto-assign.yml`).
   shelfstone.com: add the domain in the repo's Settings → Pages, point its DNS at GitHub Pages,
   and set the repository variable `BASE_PATH` to `/` (Settings → Secrets and variables →
   Actions → Variables).
-- `dist/404.html` is a copy of `index.html`, so direct visits to `/wanted` and `/privacy` work.
+- `dist/404.html` is a copy of `index.html`, so direct visits to `/privacy` work, and the old
+  `/wanted` link redirects to the wanted list on the home page.

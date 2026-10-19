@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
+import { ButtonLink } from "../components/ButtonLink";
 import { Logo } from "../components/Logo";
 import { site } from "../content/site";
 import styles from "./Header.module.css";
 
 const links = [
   { to: "/#how", label: "How it works" },
-  { to: "/wanted", label: "Wanted list" },
+  { to: "/#wanted", label: "Wanted list" },
   { to: "/#about", label: "About" },
 ];
 
@@ -41,19 +42,14 @@ export function Header() {
         </button>
 
         <nav id="site-nav" className={styles.nav} data-open={menuOpen} aria-label="Main">
-          {links.map((link) => {
-            // Section links (/#how) would always look "active" on the home page, so only
-            // whole pages get NavLink's current-page state.
-            const LinkComponent = link.to.includes("#") ? Link : NavLink;
-            return (
-              <LinkComponent key={link.to} className={styles.navLink} to={link.to} onClick={close}>
-                {link.label}
-              </LinkComponent>
-            );
-          })}
-          <Link className={`btn btn-holo ${styles.cta}`} to="/#send" onClick={close}>
+          {links.map((link) => (
+            <Link key={link.to} className={styles.navLink} to={link.to} onClick={close}>
+              {link.label}
+            </Link>
+          ))}
+          <ButtonLink className={styles.cta} to="/#send" onClick={close}>
             Send your list
-          </Link>
+          </ButtonLink>
         </nav>
       </div>
     </header>

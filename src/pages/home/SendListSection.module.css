@@ -1,30 +1,104 @@
 .intro {
-  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
 }
 
-.tableWrap {
-  margin-top: 2rem;
+/* Box title on the left, the two downloads as cells on the right */
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  border-bottom: 1px solid var(--line);
 }
 
-.fields {
-  min-width: 34rem;
+.title {
+  margin: 0;
+  padding: 1.6rem 1.9rem;
+  font-family: var(--f-body);
   font-size: var(--step--1);
 }
 
-/* Row headers read as the field names */
-.fields tbody th {
-  background: transparent;
-  color: var(--text);
-  font: 600 var(--step--1) / 1.6 var(--f-body);
-  letter-spacing: normal;
-  text-transform: none;
+.download {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.6rem 1.9rem;
+  border-left: 1px solid var(--line);
+  text-decoration: none;
   white-space: nowrap;
 }
 
-.example {
-  color: var(--muted);
+.download:hover {
+  background: var(--chip);
 }
 
-.cta {
-  margin-top: 1.5rem;
+.fields {
+  min-width: 46rem;
+  font-size: clamp(1rem, 0.9rem + 0.45vw, 1.35rem);
+}
+
+.fields thead th:first-child {
+  width: 1%;
+}
+
+.fields tbody th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.number {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.why {
+  color: var(--body);
+}
+
+.footnote {
+  max-width: none;
+  padding: 1.25rem 1.9rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: var(--step-0);
+}
+
+@media (max-width: 760px) {
+  .head {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .title {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .download:first-of-type {
+    border-left: 0;
+  }
+}
+
+/* Phones: title and the two downloads stack as full-width rows */
+@media (max-width: 600px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .title,
+  .download,
+  .footnote {
+    padding-inline: 1.1rem;
+  }
+
+  .download,
+  .download:first-of-type {
+    justify-content: space-between;
+    border-left: 0;
+  }
+
+  .download + .download {
+    border-top: 1px solid var(--line);
+  }
 }

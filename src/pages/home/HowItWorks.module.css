@@ -1,100 +1,53 @@
-.route {
-  --dot: 20px;
-
+.frame {
   position: relative;
+}
+
+/* The 1px gaps show the line colour behind the cells, so hairlines follow any column count */
+.steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin: 3rem 0 0;
-  padding: 0;
+  gap: 1px;
+  margin: 0;
+  padding: 1px;
+  background: var(--line);
   list-style: none;
 }
 
-/* The route line through the stops */
-.route::before {
-  content: "";
-  position: absolute;
-  top: calc(var(--dot) / 2 - 1px);
-  left: calc(var(--dot) / 2);
-  right: calc(var(--dot) / 2);
-  height: 2px;
-  background: var(--holo);
-  opacity: 0.7;
-}
-
-.stop {
-  position: relative;
+.step {
   display: grid;
   align-content: start;
-  gap: 0.55rem;
-  padding-top: calc(var(--dot) + 1.4rem);
+  gap: 1.1rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 2.5vw, 2.25rem) clamp(2rem, 4vw, 3.5rem);
+  background: var(--paper);
 }
 
-.stop::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: var(--dot);
-  height: var(--dot);
-  border: 2px solid var(--signal);
-  border-radius: 50%;
-  background: var(--void);
+.number {
+  margin-bottom: 1.4rem;
+  color: var(--accent);
+  font: 600 clamp(3.5rem, 2.5rem + 2.6vw, 4.75rem) / 0.9 var(--f-display);
 }
 
-.stop:last-child::before {
-  border-color: transparent;
-  background: var(--holo);
+.title {
+  font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.25rem);
 }
 
-.stop p {
-  color: var(--muted);
-  font-size: var(--step--1);
+.text {
+  color: var(--body);
+  font-size: var(--step-1);
 }
 
-.stopLabel {
-  color: var(--muted);
-  font: 500 0.72rem / 1 var(--f-mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Tablets: two rows of two, without the horizontal line */
 @media (max-width: 1000px) {
-  .route {
+  .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 2.25rem;
-  }
-
-  .route::before {
-    display: none;
   }
 }
 
-/* Phones: the route runs down the left edge */
-@media (max-width: 600px) {
-  .route {
+@media (max-width: 560px) {
+  .steps {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.75rem;
-    padding-left: calc(var(--dot) + 1rem);
   }
 
-  .route::before {
-    display: block;
-    top: calc(var(--dot) / 2);
-    bottom: calc(var(--dot) / 2);
-    left: calc(var(--dot) / 2 - 1px);
-    right: auto;
-    width: 2px;
-    height: auto;
-    background: var(--holo-vertical);
-  }
-
-  .stop {
-    padding-top: 0;
-  }
-
-  .stop::before {
-    left: calc(-1 * (var(--dot) + 1rem));
+  .number {
+    margin-bottom: 0.4rem;
   }
 }

@@ -4,16 +4,16 @@ import { site } from "../content/site";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-/** Per-route data set in the router: the tab title and optional footer fine print. */
-export type RouteHandle = { title?: string; footerNote?: string };
+/** Per-route data set in the router: the tab title. */
+export type RouteHandle = { title?: string };
 
-function useRouteHandle(): RouteHandle {
+function useRouteTitle(): string | undefined {
   const matches = useMatches();
-  return (matches.at(-1)?.handle ?? {}) as RouteHandle;
+  return (matches.at(-1)?.handle as RouteHandle | undefined)?.title;
 }
 
 export function Layout() {
-  const { title, footerNote } = useRouteHandle();
+  const title = useRouteTitle();
 
   useEffect(() => {
     document.title = title ? `${title} · ${site.name}` : site.name;
@@ -25,7 +25,7 @@ export function Layout() {
       <main>
         <Outlet />
       </main>
-      <Footer note={footerNote} />
+      <Footer />
       {/* Restores scroll on back/forward and scrolls to #section links. */}
       <ScrollRestoration />
     </>
