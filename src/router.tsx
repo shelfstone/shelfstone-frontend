@@ -1,10 +1,8 @@
-import { createBrowserRouter } from "react-router";
-import { wantedTrademarks } from "./content/wanted";
+import { Navigate, createBrowserRouter } from "react-router";
 import { Layout, type RouteHandle } from "./layout/Layout";
 import { HomePage } from "./pages/home/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
-import { WantedPage } from "./pages/WantedPage";
 
 export const router = createBrowserRouter(
   [
@@ -12,11 +10,8 @@ export const router = createBrowserRouter(
       element: <Layout />,
       children: [
         { path: "/", element: <HomePage /> },
-        {
-          path: "/wanted",
-          element: <WantedPage />,
-          handle: { title: "Wanted list", footerNote: wantedTrademarks } satisfies RouteHandle,
-        },
+        // The wanted list moved onto the home page; keep old links working.
+        { path: "/wanted", element: <Navigate to="/#wanted" replace /> },
         {
           path: "/privacy",
           element: <PrivacyPage />,

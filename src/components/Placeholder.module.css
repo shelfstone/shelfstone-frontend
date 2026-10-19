@@ -1,5 +1,9 @@
+/* An unknown fact, shown as a chip until it is filled in src/content/site.ts */
 .todo {
-  padding: 0 0.2em;
-  border-radius: 3px;
-  background: var(--todo);
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  background: var(--chip);
+  color: var(--chip-ink);
+  font: 500 0.85em / 1.4 var(--f-body);
+  vertical-align: 0.05em;
 }

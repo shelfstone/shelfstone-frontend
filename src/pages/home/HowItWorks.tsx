@@ -1,22 +1,27 @@
+import { CropMarks } from "../../components/CropMarks";
+import { SectionHeading } from "../../components/SectionHeading";
 import { steps } from "../../content/home";
 import styles from "./HowItWorks.module.css";
 
-/** The four steps drawn as a shipping route with stops. */
 export function HowItWorks() {
   return (
     <section className="section" id="how">
       <div className="wrap">
-        <p className="eyebrow">How it works</p>
-        <h2>From your list to a written offer</h2>
-        <ol className={styles.route}>
-          {steps.map((step, index) => (
-            <li key={step.title} className={styles.stop}>
-              <span className={styles.stopLabel}>Stop {index + 1}</span>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </li>
-          ))}
-        </ol>
+        <SectionHeading number={3} label="How it works" title="From your list to a written offer" />
+        <div className={styles.frame}>
+          <CropMarks />
+          <ol className={styles.steps}>
+            {steps.map((step, index) => (
+              <li key={step.title} className={styles.step}>
+                <span className={`num ${styles.number}`} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className={styles.title}>{step.title}</h3>
+                <p className={styles.text}>{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

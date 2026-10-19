@@ -11,7 +11,7 @@ export function PrivacyPage() {
   return (
     <>
       <PageHeader
-        eyebrow={`Privacy · last updated ${LAST_UPDATED}`}
+        label={`Privacy · last updated ${LAST_UPDATED}`}
         title="How we use contact details"
         intro="Shelfstone contacts businesses about buying their stock. This page explains which details we hold, why, and how to stop hearing from us."
       />
