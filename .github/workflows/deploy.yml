@@ -1,9 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Checks run in ci.yml; this workflow only builds and publishes main.
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -27,8 +27,6 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run lint
-      - run: npm run format:check
 
       # Served from /website/ on github.io. With a custom domain, set the repository
       # variable BASE_PATH to "/".
@@ -40,13 +38,11 @@ jobs:
       # direct visits to /wanted and /privacy load the right page.
       - run: cp dist/index.html dist/404.html
 
-      - if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:

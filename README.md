@@ -49,8 +49,10 @@ Geist, Geist Mono) are self-hosted from npm, so no requests go to Google Fonts.
 
 ## Hosting (GitHub Pages)
 
-Every push to `main` deploys the site with `.github/workflows/deploy.yml` (lint, format check,
-type-check, build, publish). Pull requests run the same checks without deploying.
+Every push to `main` is published by `.github/workflows/deploy.yml`. CI
+(`.github/workflows/ci.yml`: lint, format check, type-check, build) runs on every pull request
+and on `main`; `main` is protected and only accepts changes through pull requests that pass CI.
+New issues are assigned automatically (`.github/workflows/auto-assign.yml`).
 
 - Live at https://shelfstone.github.io/website/
 - The site is built for the `/website/` sub-path. To move to a custom domain such as
