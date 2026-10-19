@@ -1,0 +1,19 @@
+name: Auto-assign issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      # New issues go to the repository maintainer; change the login to reassign.
+      - run: gh issue edit "$ISSUE" --repo "$REPO" --add-assignee ShohamD1121
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
