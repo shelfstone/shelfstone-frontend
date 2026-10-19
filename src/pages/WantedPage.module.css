@@ -1,0 +1,30 @@
+.body {
+  padding-block: 1rem clamp(3.5rem, 7vw, 6rem);
+}
+
+.group {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.group h2 {
+  font-size: var(--step-1);
+}
+
+.groupNote {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .group :global(.data-table) th,
+  .group :global(.data-table) td {
+    padding-inline: 0.8rem;
+  }
+}

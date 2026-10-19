@@ -1,0 +1,26 @@
+.body {
+  padding-block: 0.5rem clamp(3.5rem, 7vw, 6rem);
+}
+
+.prose {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 46rem;
+}
+
+.prose h2 {
+  margin-top: 1rem;
+  font-size: var(--step-1);
+}
+
+.prose p,
+.prose ul {
+  color: var(--muted);
+}
+
+.prose ul {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}

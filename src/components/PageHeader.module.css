@@ -1,0 +1,21 @@
+.head {
+  padding-block: clamp(3rem, 7vw, 5.5rem) 2rem;
+}
+
+.head::before {
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+
+.inner {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.inner :global(.eyebrow) {
+  margin-bottom: 0;
+}
+
+.inner :global(.actions) {
+  margin-top: 0.5rem;
+}
