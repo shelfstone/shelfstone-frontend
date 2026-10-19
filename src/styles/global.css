@@ -9,7 +9,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 1.5rem);
+  scroll-padding-top: 1.5rem;
 }
 
 body {
@@ -73,8 +73,9 @@ p {
   padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 
-.section {
-  padding-block: clamp(3rem, 6vw, 5.5rem);
+/* A line of a title that always starts on its own line */
+.line {
+  display: block;
 }
 
 /* Small uppercase labels: section numbers, table heads, box titles */

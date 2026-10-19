@@ -1,3 +1,10 @@
+/** The photo under the hero. Until `src` is set, the site shows a marked-out space for it. */
+export const heroFigure = {
+  src: null as string | null,
+  alt: "pallets or shelved US goods in a warehouse",
+  caption: "From a few cases to full pallets",
+};
+
 export const categories = [
   "Coffee and food",
   "Supplements and sports nutrition",
@@ -40,7 +47,7 @@ export const listFields = [
   {
     field: "Product and size",
     why: "Checks the UPC against the pack",
-    example: "Taster's Choice French Roast, 7 oz",
+    example: "Taster's Choice French Roast 7\u00a0oz",
   },
   { field: "Case pack", why: "Units per case", example: "12 jars" },
   { field: "Quantity", why: "How much is available now", example: "40 cases" },

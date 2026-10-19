@@ -1,37 +1,44 @@
+.statement {
+  max-width: 40rem;
+  font-size: clamp(1.4rem, 1.05rem + 1.1vw, 2.15rem);
+  line-height: 1.35;
+}
+
 .text {
-  display: grid;
-  gap: 1.5rem;
+  max-width: 42rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--body);
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.45rem);
 }
 
-.title {
-  margin: 0;
-  padding: 1.6rem clamp(1.1rem, 3vw, 2.25rem);
-  border-bottom: 1px solid var(--line);
-  font-family: var(--f-body);
-  font-size: var(--step--1);
+.contact {
+  margin-top: clamp(3rem, 6vw, 5.75rem);
+  padding-top: clamp(1.75rem, 3vw, 2.75rem);
+  border-top: 1px solid var(--line);
 }
 
-.person {
-  display: grid;
-  gap: 1.75rem;
-  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.1rem, 3vw, 2.25rem);
+.writeTo {
+  max-width: none;
+  color: var(--muted);
 }
 
-.name {
-  font-size: var(--step-1);
+.writeTo > span {
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .emailRow {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1rem;
+  gap: 1rem 2.25rem;
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .email {
   min-width: 0;
   color: var(--ink);
-  font: 600 clamp(1.6rem, 1.1rem + 2vw, 2.4rem) / 1.1 var(--f-display);
+  font: 600 clamp(2rem, 0.9rem + 4.4vw, 4.9rem) / 1 var(--f-display);
   text-decoration: none;
   overflow-wrap: anywhere;
 }
@@ -41,28 +48,24 @@
 }
 
 .facts {
-  margin: 0;
-}
-
-.fact {
   display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr);
-  gap: 0.25rem 1.5rem;
-  padding: 1.1rem clamp(1.1rem, 3vw, 2.25rem);
-  border-top: 1px solid var(--line);
-  font-size: var(--step-1);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  margin: clamp(2rem, 4vw, 3.25rem) 0 0;
 }
 
-.fact dt {
+.facts dt {
+  margin-bottom: 0.75rem;
   color: var(--muted);
 }
 
-.fact dd {
+.facts dd {
   margin: 0;
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
 }
 
 @media (max-width: 520px) {
-  .fact {
+  .facts {
     grid-template-columns: minmax(0, 1fr);
   }
 }
