@@ -21,9 +21,9 @@ Node 20 or newer.
 | Path                    | What it is                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `src/content/`          | All site text and data: company facts (`site.ts`), the wanted list (`wanted.ts`), home page lists (`home.ts`) |
-| `src/pages/`            | The home page (one page of sections 01–06, in `src/pages/home/`), privacy and 404                             |
+| `src/pages/`            | The home page (one page: the hero, then sections 01–05, in `src/pages/home/`), privacy and 404                |
 | `src/layout/`           | Header (with the phone menu), footer and the shared page layout                                               |
-| `src/components/`       | Small reusable pieces: crop marks, button links, section headings, logo, copy button                          |
+| `src/components/`       | Small reusable pieces: crop marks, button links, numbered sections, logo, copy button                         |
 | `src/styles/tokens.css` | Colours, fonts and type scale                                                                                 |
 | `src/styles/global.css` | Base styles and the few shared classes (`.wrap`, `.btn`, `.label`, `.frame`, tables)                          |
 | `public/files/`         | The stock list template suppliers download (Excel and CSV)                                                    |
@@ -33,8 +33,11 @@ Barlow Condensed) are self-hosted from npm, so no requests go to Google Fonts.
 
 ## Common edits
 
-- **Wanted list:** edit `src/content/wanted.ts` and update `wantedUpdated`. The "Wanted now" box
-  under the hero and section 04 both read from it.
+- **Wanted list:** edit `src/content/wanted.ts` and update `wantedUpdated`. Section 03 reads from
+  it.
+- **Hero photo:** put the image in `public/images/` and set `heroFigure.src` in
+  `src/content/home.ts` (for example `"/images/warehouse.jpg"`). Until then the site shows a marked-out
+  space for it.
 - **Company details:** fill `lastName`, `legalName` and `address` in `src/content/site.ts`. While
   they are `null` the site shows highlighted placeholders.
 - **Email address:** `email` in `src/content/site.ts`.
@@ -43,6 +46,7 @@ Barlow Condensed) are self-hosted from npm, so no requests go to Google Fonts.
 
 - Fill the placeholders in `src/content/site.ts` (George's last name, registered company name,
   business address).
+- Add the hero photo (see Common edits).
 - Make sure the `george@shelfstone.com` mailbox exists.
 - Confirm the promises in the copy: "reply within two working days", "from a few cases to full
   pallets".

@@ -1,62 +1,41 @@
-.categoriesTitle {
-  margin-bottom: 1.25rem;
-  color: var(--muted);
-  font-family: var(--f-body);
+.lede {
+  max-width: 40rem;
+  font-size: clamp(1.2rem, 1rem + 0.75vw, 1.7rem);
+  line-height: 1.55;
 }
 
-/* Three columns of categories between hairlines */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
-  padding: 0;
-  border-top: 1px solid var(--line);
-  list-style: none;
-}
-
-.categories li {
-  padding: 1.1rem 1.5rem 1.1rem 0;
-  border-bottom: 1px solid var(--line);
-  font-size: var(--step-1);
-}
-
-/* Spec sheet: heavy rule on top, hairlines between rows */
+/* Spec sheet: a label column and hairlines between rows */
 .criteria {
-  margin: 0;
-  border-top: 1px solid var(--line-strong);
+  margin: clamp(2.5rem, 5vw, 4.25rem) 0 0;
 }
 
 .criterion {
   display: grid;
-  grid-template-columns: 11.75rem minmax(0, 1fr);
-  gap: 1rem 2rem;
-  padding: clamp(1.25rem, 2.2vw, 2rem) 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.15fr);
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line);
 }
 
 .criterion dt {
-  font: 600 clamp(1.6rem, 1.3rem + 1vw, 2.1rem) / 1.1 var(--f-display);
-  text-transform: uppercase;
+  padding-top: 0.35em;
 }
 
 .criterion dd {
   margin: 0;
-  font-size: var(--step-1);
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
 }
 
-@media (max-width: 820px) {
-  .categories {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.categories dt {
+  color: var(--accent-ink);
+}
+
+.categories dd {
+  color: var(--body);
 }
 
 @media (max-width: 600px) {
-  .categories {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .criterion {
     grid-template-columns: minmax(0, 1fr);
-    gap: 0.4rem;
   }
 }

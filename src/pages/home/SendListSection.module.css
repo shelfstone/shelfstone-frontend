@@ -1,55 +1,41 @@
-.intro {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem 3rem;
-}
-
-/* Box title on the left, the two downloads as cells on the right */
-.head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  border-bottom: 1px solid var(--line);
-}
-
-.title {
-  margin: 0;
-  padding: 1.6rem 1.9rem;
-  font-family: var(--f-body);
-  font-size: var(--step--1);
-}
-
 .download {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 1.6rem 1.9rem;
-  border-left: 1px solid var(--line);
-  text-decoration: none;
-  white-space: nowrap;
+  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.35rem);
 }
 
-.download:hover {
-  background: var(--chip);
+.lede {
+  max-width: 46rem;
+  color: var(--body);
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.45rem);
+  line-height: 1.6;
+}
+
+.box {
+  margin-top: clamp(2.5rem, 5vw, 4.25rem);
 }
 
 .fields {
-  min-width: 46rem;
-  font-size: clamp(1rem, 0.9rem + 0.45vw, 1.35rem);
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.35rem);
 }
 
-.fields thead th:first-child {
+.fields th,
+.fields td {
+  padding: 1.15rem 1.5rem 1.15rem 0;
+  vertical-align: middle;
+}
+
+.fields th:first-child,
+.fields td:first-child {
   width: 1%;
+  padding-left: 1.9rem;
 }
 
 .fields tbody th {
   font-weight: 600;
-  white-space: nowrap;
 }
 
 .number {
   color: var(--accent-ink);
+  font-size: 0.8em;
   font-weight: 600;
 }
 
@@ -58,47 +44,45 @@
 }
 
 .footnote {
-  max-width: none;
-  padding: 1.25rem 1.9rem;
-  border-top: 1px solid var(--line);
+  margin-top: 1.25rem;
   color: var(--muted);
   font-size: var(--step-0);
 }
 
+/* Phones and small tablets: each field becomes a card of label and text */
 @media (max-width: 760px) {
-  .head {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .fields thead {
+    display: none;
   }
 
-  .title {
-    grid-column: 1 / -1;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .download:first-of-type {
-    border-left: 0;
-  }
-}
-
-/* Phones: title and the two downloads stack as full-width rows */
-@media (max-width: 600px) {
-  .head {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .title,
-  .download,
-  .footnote {
-    padding-inline: 1.1rem;
-  }
-
-  .download,
-  .download:first-of-type {
-    justify-content: space-between;
-    border-left: 0;
-  }
-
-  .download + .download {
+  .fields tr {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.3rem 1rem;
+    padding: 1.1rem 1.1rem;
     border-top: 1px solid var(--line);
+  }
+
+  .fields tbody tr:first-child {
+    border-top: 0;
+  }
+
+  .fields th,
+  .fields td,
+  .fields th:first-child,
+  .fields td:first-child {
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .why,
+  .example {
+    grid-column: 2;
+  }
+
+  .example::before {
+    content: "e.g. ";
+    color: var(--muted);
   }
 }

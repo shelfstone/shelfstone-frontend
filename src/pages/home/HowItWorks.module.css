@@ -1,53 +1,55 @@
-.frame {
-  position: relative;
-}
-
-/* The 1px gaps show the line colour behind the cells, so hairlines follow any column count */
 .steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  margin: 0;
-  padding: 1px;
-  background: var(--line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 2.7vw, 2.2rem);
+  margin: clamp(2.25rem, 4vw, 3.5rem) 0 0;
+  padding: 0;
   list-style: none;
 }
 
 .step {
   display: grid;
   align-content: start;
-  gap: 1.1rem;
-  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 2.5vw, 2.25rem) clamp(2rem, 4vw, 3.5rem);
-  background: var(--paper);
+  gap: 1rem;
+}
+
+/* The step number, then a line to the end of the column */
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* The last line ends in a small square */
+.step:last-child .rule::before {
+  content: "";
+  order: 1;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--accent);
 }
 
 .number {
-  margin-bottom: 1.4rem;
-  color: var(--accent);
-  font: 600 clamp(3.5rem, 2.5rem + 2.6vw, 4.75rem) / 0.9 var(--f-display);
-}
-
-.title {
-  font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.25rem);
+  color: var(--accent-ink);
+  font: 600 1.05rem / 1 var(--f-body);
+  letter-spacing: 0.08em;
 }
 
 .text {
   color: var(--body);
-  font-size: var(--step-1);
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
 }
 
-@media (max-width: 1000px) {
-  .steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   .steps {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .number {
-    margin-bottom: 0.4rem;
   }
 }
