@@ -38,7 +38,7 @@ A small, independent buyer that matches stock by UPC and publishes exactly what 
 
 ## Capabilities and Constraints
 
-- Static React + Vite site on GitHub Pages at https://shelfstone.github.io/ (custom domain shelfstone.com planned). Main is protected; changes go through pull requests with CI.
+- Static React + Vite site on GitHub Pages at https://shelfstone.com/ (domain on Cloudflare DNS). Main is protected; changes go through pull requests with CI.
 - Content lives in `src/content/` (site facts, wanted list, home copy).
 - Undecided or unknown: George's last name, registered company name, business address. They show as visible placeholders until filled; never invent them.
 

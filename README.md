@@ -64,9 +64,10 @@ Every push to `main` is published by `.github/workflows/deploy.yml`. CI
 and on `main`; `main` is protected and only accepts changes through pull requests that pass CI.
 New issues are assigned automatically (`.github/workflows/auto-assign.yml`).
 
-- Live at https://shelfstone.github.io/ (the repo is named `shelfstone.github.io`, so GitHub
-  serves it from the root).
-- To move to a custom domain such as shelfstone.com: add the domain in the repo's Settings →
-  Pages and point its DNS at GitHub Pages. No code change is needed.
+- Live at https://shelfstone.com/, with HTTPS enforced. The custom domain is set in the repo's
+  Settings → Pages; https://shelfstone.github.io/ and www.shelfstone.com redirect to it.
+- DNS is on Cloudflare: four `A` records for `shelfstone.com` (185.199.108.153, .109, .110,
+  .111) and a `www` `CNAME` to `shelfstone.github.io`, all **DNS only** (not proxied), so
+  GitHub can issue and renew the certificate.
 - `dist/404.html` is a copy of `index.html`, so direct visits to `/privacy` work, and the old
   `/wanted` link redirects to the wanted list on the home page.
