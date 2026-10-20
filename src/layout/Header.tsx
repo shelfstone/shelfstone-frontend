@@ -1,59 +1,35 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { Icon } from "../components/Icon";
 import { Logo } from "../components/Logo";
+import { sections, type SectionId } from "../content/sections";
 import { site } from "../content/site";
+import { wantedUpdated } from "../content/wanted";
 import styles from "./Header.module.css";
 
-const links = [
-  { to: "/#how", label: "How it works" },
-  { to: "/#wanted", label: "Wanted list" },
-  { to: "/#about", label: "About" },
-];
-
-export function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const close = () => setMenuOpen(false);
-
-  useEffect(() => {
-    if (!menuOpen) return;
-    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setMenuOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [menuOpen]);
+/** The catalog's running header: name, edition stamp, contact and the current page number. */
+export function Header({ active }: { active: SectionId | null }) {
+  const page = sections.findIndex((section) => section.id === active);
 
   return (
     <header className={styles.header}>
       <div className="wrap">
         <div className={styles.bar}>
-          <Link className={styles.brand} to="/" onClick={close}>
+          <Link className={styles.brand} to="/#top">
             <Logo className={styles.logo} />
             <span>{site.name}</span>
           </Link>
-
-          <button
-            className={styles.menuButton}
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="site-nav"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span className="visually-hidden">{menuOpen ? "Close menu" : "Open menu"}</span>
-            <span className={styles.menuIcon} data-open={menuOpen} aria-hidden="true" />
-          </button>
-
-          <nav id="site-nav" className={styles.nav} data-open={menuOpen} aria-label="Main">
-            {links.map((link) => (
-              <Link key={link.to} className={styles.navLink} to={link.to} onClick={close}>
-                {link.label}
-              </Link>
-            ))}
-            <a className={styles.email} href={`mailto:${site.email}`} onClick={close}>
-              {site.email}{" "}
-              <span className={styles.emailArrow} aria-hidden="true">
-                ↗
-              </span>
+          <p className={`label ${styles.edition}`}>
+            <span className={styles.list}>Buying list · </span>Edition{" "}
+            <span className={styles.date}>{wantedUpdated}</span>
+          </p>
+          <div className={styles.end}>
+            <a className={styles.email} href={`mailto:${site.email}`}>
+              {site.email} <Icon name="arrow-up-right" />
             </a>
-          </nav>
+            {page >= 0 && (
+              <span className={`label ${styles.page}`}>p. {String(page + 1).padStart(2, "0")}</span>
+            )}
+          </div>
         </div>
       </div>
     </header>

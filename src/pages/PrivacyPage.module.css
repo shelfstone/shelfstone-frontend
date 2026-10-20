@@ -1,16 +1,17 @@
 .body {
-  padding-block: 0.5rem clamp(3.5rem, 7vw, 6rem);
+  padding-bottom: calc(var(--row) * 2);
 }
 
 .prose {
   display: grid;
-  gap: 1.1rem;
+  gap: 1rem;
   max-width: 46rem;
+  margin-left: calc(var(--rail) + clamp(1.25rem, 2.5vw, 2.5rem));
 }
 
 .prose h2 {
   margin-top: 1.5rem;
-  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+  font-size: var(--t-h3);
 }
 
 .prose p,
@@ -23,4 +24,10 @@
   gap: 0.4rem;
   margin: 0;
   padding-left: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .prose {
+    margin-left: 0;
+  }
 }

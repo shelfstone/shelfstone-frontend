@@ -3,27 +3,28 @@ import styles from "./Section.module.css";
 
 type Props = {
   id: string;
-  number: number;
+  number: string;
   label: string;
   /** The section title. Without one, the label is the section's heading. */
   title?: ReactNode;
   /** Notes under the label, such as an update date or downloads. */
   aside?: ReactNode;
-  tone?: "light" | "dark";
   children?: ReactNode;
 };
 
-/** A numbered home page section: number and label in a rail on the left, content on the right,
- * under a full-width rule. */
-export function Section({ id, number, label, title, aside, tone = "light", children }: Props) {
+/** One catalog page: its number and label in the left rail, content to the right, under a
+ * heavy rule. The number matches the page's thumb-index tab. */
+export function Section({ id, number, label, title, aside, children }: Props) {
   const Label = title ? "p" : "h2";
 
   return (
-    <section id={id} className={styles.section} data-tone={tone}>
+    <section id={id} className={styles.section}>
       <div className="wrap">
-        <div className={styles.grid}>
+        <div className={styles.page}>
           <div className={styles.rail}>
-            <p className={`num ${styles.number}`}>{String(number).padStart(2, "0")}</p>
+            <p className={styles.number} aria-hidden="true">
+              {number}
+            </p>
             <Label className={`label ${styles.label}`}>{label}</Label>
             {aside && <div className={styles.aside}>{aside}</div>}
           </div>

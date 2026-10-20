@@ -1,71 +1,83 @@
 .statement {
   max-width: 40rem;
-  font-size: clamp(1.3rem, 1.05rem + 0.75vw, 1.8rem);
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.75rem);
+  font-weight: 500;
   line-height: 1.35;
 }
 
 .text {
   max-width: 42rem;
-  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: 1.25rem;
   color: var(--body);
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.45rem);
+  font-size: var(--t-lede);
 }
 
+/* The contact card: a heavy rule, the address set large, then the facts in a ruled row */
 .contact {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding-top: clamp(1.75rem, 3vw, 2.75rem);
-  border-top: 1px solid var(--line);
-}
-
-.writeTo {
-  max-width: none;
-  color: var(--muted);
-}
-
-.writeTo > span {
-  letter-spacing: 0;
-  text-transform: none;
+  margin-top: calc(var(--row) * 1.25);
+  border-top: 4px solid var(--ink);
+  padding-top: 1rem;
 }
 
 .emailRow {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem 2.25rem;
-  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  gap: 0.75rem 1.5rem;
+  margin-top: 1rem;
 }
 
 .email {
   min-width: 0;
-  color: var(--ink);
-  font: 600 clamp(2rem, 1rem + 3vw, 3.6rem) / 1 var(--f-display);
+  font: 800 clamp(2rem, 1rem + 3vw, 3.5rem) / 1 var(--f);
+  font-stretch: var(--display-stretch);
+  letter-spacing: -0.01em;
   text-decoration: none;
   overflow-wrap: anywhere;
 }
 
 .email:hover {
-  color: var(--accent-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
 }
 
 .facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem 1.5rem;
-  margin: clamp(2rem, 4vw, 3.25rem) 0 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: calc(var(--row) * 0.75) 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.facts > div {
+  padding: 0.75rem 1.25rem 0 0;
+}
+
+.facts > div + div {
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rule);
 }
 
 .facts dt {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
   color: var(--muted);
 }
 
 .facts dd {
   margin: 0;
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .facts {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facts > div,
+  .facts > div + div {
+    padding: 0.75rem 0;
+    border-left: 0;
+  }
+
+  .facts > div + div {
+    border-top: 1px solid var(--rule);
   }
 }

@@ -1,0 +1,11 @@
+/* Leaves room for the thumb-index: down the right edge, or along the bottom on phones */
+.page {
+  padding-right: var(--tabs);
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding-right: 0;
+    padding-bottom: calc(var(--tabs) + env(safe-area-inset-bottom, 0px));
+  }
+}

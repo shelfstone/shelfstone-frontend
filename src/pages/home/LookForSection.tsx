@@ -6,7 +6,7 @@ export function LookForSection() {
   return (
     <Section
       id="look-for"
-      number={2}
+      number="02"
       label="What we look for"
       title={
         <>
@@ -21,16 +21,22 @@ export function LookForSection() {
         pack.
       </p>
 
-      <dl className={styles.criteria}>
+      <dl className={styles.spec}>
         {criteria.map((item) => (
-          <div key={item.label} className={styles.criterion}>
+          <div key={item.label} className={styles.row}>
             <dt className="label">{item.label}</dt>
             <dd>{item.text}</dd>
           </div>
         ))}
-        <div className={`${styles.criterion} ${styles.categories}`}>
+        <div className={styles.row}>
           <dt className="label">Categories</dt>
-          <dd>{categories.join(" / ")}</dd>
+          <dd>
+            <ul className={styles.categories}>
+              {categories.map((category) => (
+                <li key={category}>{category}</li>
+              ))}
+            </ul>
+          </dd>
         </div>
       </dl>
     </Section>

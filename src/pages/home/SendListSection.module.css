@@ -1,42 +1,33 @@
 .download {
-  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.35rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
 }
 
 .lede {
-  max-width: 46rem;
+  max-width: 44rem;
   color: var(--body);
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.45rem);
-  line-height: 1.6;
+  font-size: var(--t-lede);
 }
 
 .box {
-  margin-top: clamp(2rem, 4vw, 3.25rem);
+  margin-top: var(--row);
+  border-top: 4px solid var(--ink);
 }
 
-.fields {
-  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.35rem);
-}
-
-.fields th,
-.fields td {
-  padding: 1.15rem 1.5rem 1.15rem 0;
-  vertical-align: middle;
+.fields tbody th {
+  font-weight: 700;
 }
 
 .fields th:first-child,
 .fields td:first-child {
   width: 1%;
-  padding-left: 1.9rem;
-}
-
-.fields tbody th {
-  font-weight: 600;
+  padding-right: 1.5rem;
 }
 
 .number {
-  color: var(--accent-ink);
-  font-size: 0.8em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .why {
@@ -44,12 +35,12 @@
 }
 
 .footnote {
-  margin-top: 1.25rem;
+  margin-top: 0.75rem;
   color: var(--muted);
-  font-size: var(--step-0);
+  font-size: var(--t-small);
 }
 
-/* Phones and small tablets: each field becomes a card of label and text */
+/* Phones and small tablets: each field becomes a block of number, name, reason and example */
 @media (max-width: 760px) {
   .fields thead {
     display: none;
@@ -57,14 +48,10 @@
 
   .fields tr {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.3rem 1rem;
-    padding: 1.1rem 1.1rem;
-    border-top: 1px solid var(--line);
-  }
-
-  .fields tbody tr:first-child {
-    border-top: 0;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.2rem 0.75rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
   }
 
   .fields th,
@@ -72,6 +59,7 @@
   .fields th:first-child,
   .fields td:first-child {
     width: auto;
+    height: auto;
     padding: 0;
     border: 0;
   }

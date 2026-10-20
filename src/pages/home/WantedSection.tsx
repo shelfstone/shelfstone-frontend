@@ -1,5 +1,6 @@
 import { Link } from "react-router";
-import { Arrow, ButtonLink } from "../../components/ButtonLink";
+import { ButtonLink } from "../../components/ButtonLink";
+import { Icon } from "../../components/Icon";
 import { Section } from "../../components/Section";
 import { mailto, templateFiles } from "../../content/site";
 import { wantedGroups, wantedUpdated } from "../../content/wanted";
@@ -9,10 +10,14 @@ export function WantedSection() {
   return (
     <Section
       id="wanted"
-      tone="dark"
-      number={3}
+      number="03"
       label="Wanted list"
-      aside={<p>Updated {wantedUpdated}</p>}
+      aside={
+        <p className={styles.stamp}>
+          <span className="label">Updated</span>
+          <span className={styles.date}>{wantedUpdated}</span>
+        </p>
+      }
       title="What we are buying now"
     >
       <p className={styles.lede}>
@@ -21,25 +26,27 @@ export function WantedSection() {
       </p>
 
       {wantedGroups.map((group) => (
-        <div key={group.title} className={styles.group}>
-          <div className={styles.groupHead}>
-            <h3 className={`label ${styles.groupTitle}`}>{group.title}</h3>
-            <p className={styles.groupNote}>{group.note}</p>
-          </div>
-          <table className={styles.table}>
-            <thead className="visually-hidden">
+        <div key={group.title} className={`table-scroll ${styles.group}`}>
+          <table className={`data-table ${styles.table}`}>
+            <caption>
+              <span className={styles.groupTitle}>{group.title}</span>
+              <span className={styles.groupNote}>{group.note}</span>
+            </caption>
+            <thead>
               <tr>
                 <th scope="col">UPC</th>
                 <th scope="col">Product</th>
-                <th scope="col">Size</th>
+                <th scope="col" className="end">
+                  Size
+                </th>
               </tr>
             </thead>
             <tbody>
               {group.items.map((item) => (
                 <tr key={item.upc}>
-                  <td className={`num ${styles.upc}`}>{item.upc}</td>
-                  <td className={styles.product}>{item.product}</td>
-                  <td className={`num ${styles.size}`}>{item.size}</td>
+                  <td className="code">{item.upc}</td>
+                  <td>{item.product}</td>
+                  <td className="end">{item.size}</td>
                 </tr>
               ))}
             </tbody>
@@ -49,18 +56,14 @@ export function WantedSection() {
 
       <div className={`actions ${styles.actions}`}>
         <ButtonLink href={mailto("Offer for your wanted list")}>
-          Offer these items <Arrow />
+          Offer these items <Icon name="arrow-right" />
         </ButtonLink>
-        <a className={styles.link} href={templateFiles.xlsx} download>
+        <a href={templateFiles.xlsx} download>
           Download the template
         </a>
       </div>
       <p className={styles.notListed}>
-        Not on the list?{" "}
-        <Link className={styles.link} to="/#send">
-          Send your full catalog
-        </Link>
-        .
+        Not on the list? <Link to="/#send">Send your full catalog</Link>.
       </p>
     </Section>
   );

@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T15:12:16.851615+00:00",
+  "title": "Design System: Shelfstone",
+  "extensions": {
+    "colorMeta": {
+      "stock": {
+        "role": "neutral",
+        "displayName": "Coated Stock",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#111214",
+          "#2f3236",
+          "#5a5f66",
+          "#7c8188",
+          "#9aa0a7",
+          "#c9cdd2",
+          "#e4e6e9",
+          "#f5f6f7"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Press Black",
+        "canonical": "#111214",
+        "tonalRamp": [
+          "#111214",
+          "#2f3236",
+          "#5a5f66",
+          "#7c8188",
+          "#9aa0a7",
+          "#c9cdd2",
+          "#e4e6e9",
+          "#f5f6f7"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#2f3236",
+        "tonalRamp": [
+          "#111214",
+          "#2f3236",
+          "#5a5f66",
+          "#7c8188",
+          "#9aa0a7",
+          "#c9cdd2",
+          "#e4e6e9",
+          "#f5f6f7"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "#5a5f66",
+        "tonalRamp": [
+          "#111214",
+          "#2f3236",
+          "#5a5f66",
+          "#7c8188",
+          "#9aa0a7",
+          "#c9cdd2",
+          "#e4e6e9",
+          "#f5f6f7"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c9cdd2",
+        "tonalRamp": [
+          "#111214",
+          "#2f3236",
+          "#5a5f66",
+          "#7c8188",
+          "#9aa0a7",
+          "#c9cdd2",
+          "#e4e6e9",
+          "#f5f6f7"
+        ]
+      },
+      "spot": {
+        "role": "primary",
+        "displayName": "Catalog Spot Blue",
+        "canonical": "#005eb8",
+        "tonalRamp": [
+          "#0a1f3a",
+          "#0f3260",
+          "#00468a",
+          "#005eb8",
+          "#3a7fca",
+          "#7ba8dc",
+          "#b9d0ec",
+          "#e8eff8"
+        ]
+      },
+      "spot-deep": {
+        "role": "primary",
+        "displayName": "Pressed Spot",
+        "canonical": "#00468a",
+        "tonalRamp": [
+          "#0a1f3a",
+          "#0f3260",
+          "#00468a",
+          "#005eb8",
+          "#3a7fca",
+          "#7ba8dc",
+          "#b9d0ec",
+          "#e8eff8"
+        ]
+      },
+      "spot-tint": {
+        "role": "primary",
+        "displayName": "Spot Tint",
+        "canonical": "#e8eff8",
+        "tonalRamp": [
+          "#0a1f3a",
+          "#0f3260",
+          "#00468a",
+          "#005eb8",
+          "#3a7fca",
+          "#7ba8dc",
+          "#b9d0ec",
+          "#e8eff8"
+        ]
+      },
+      "on-spot": {
+        "role": "primary",
+        "displayName": "Reversed White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0a1f3a",
+          "#0f3260",
+          "#00468a",
+          "#005eb8",
+          "#3a7fca",
+          "#7ba8dc",
+          "#b9d0ec",
+          "#e8eff8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The page h1 only; uppercase, condensed 800, one deliberate break per line."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles (h2)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Step names, wanted-list group titles, prose subheads."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "UPCs and wanted codes, in spot, never wrapped."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Opening paragraph under a title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 68ch max."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase letter-spaced table heads, folio names, field names, running header."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Asides, notes, footnotes."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-colour",
+        "value": "0.15s ease-out",
+        "purpose": "Background and text colour changes on buttons and copy button."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Trailing arrows slide 4px on hover of 'see what we buy' and the slip email."
+      },
+      {
+        "name": "press",
+        "value": "translateY(1px)",
+        "purpose": "Button active state."
+      },
+      {
+        "name": "tab-switch",
+        "value": "none",
+        "purpose": "Thumb-index tabs switch instantly, like printed tabs."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none; scroll-behavior: auto",
+        "purpose": "Applied under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-sm",
+        "value": "480px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      },
+      {
+        "name": "header-compact",
+        "value": "600px"
+      },
+      {
+        "name": "facts-stack",
+        "value": "640px"
+      },
+      {
+        "name": "fields-stack",
+        "value": "760px"
+      },
+      {
+        "name": "rail-collapse",
+        "value": "900px"
+      },
+      {
+        "name": "cover-stack",
+        "value": "999px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "desktop-narrow",
+        "value": "1200px"
+      },
+      {
+        "name": "short-screen",
+        "value": "max-height: 700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action: email us or offer items.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Offer these items <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M3 12h17M14 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; gap:0.6rem; min-height:3.25rem; padding:0.75rem 1.5rem; border:2px solid transparent; border-radius:0; font:800 clamp(1.125rem,1rem + 0.4vw,1.375rem)/1 var(--f); font-stretch:68%; letter-spacing:0.02em; text-transform:uppercase; text-decoration:none; cursor:pointer; transition:background-color 0.15s ease-out, color 0.15s ease-out; } .ds-btn:active { transform:translateY(1px); } .ds-btn:focus-visible { outline:2px solid var(--spot); outline-offset:3px; } .ds-btn-primary { background:var(--spot); color:var(--on-spot); } .ds-btn-primary:hover { background:var(--spot-deep); color:var(--on-spot); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined ink alternative beside a primary.",
+      "html": "<a class=\"ds-btn ds-btn-secondary\" href=\"#\">Wanted list</a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; gap:0.6rem; min-height:3.25rem; padding:0.75rem 1.5rem; border:2px solid transparent; border-radius:0; font:800 clamp(1.125rem,1rem + 0.4vw,1.375rem)/1 var(--f); font-stretch:68%; letter-spacing:0.02em; text-transform:uppercase; text-decoration:none; cursor:pointer; transition:background-color 0.15s ease-out, color 0.15s ease-out; } .ds-btn:active { transform:translateY(1px); } .ds-btn:focus-visible { outline:2px solid var(--spot); outline-offset:3px; } .ds-btn-secondary { background:var(--stock); border-color:var(--ink); color:var(--ink); } .ds-btn-secondary:hover { background:var(--ink); color:var(--stock); }"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "Small outlined button that copies the email address.",
+      "html": "<button class=\"ds-copy\" type=\"button\">Copy</button>",
+      "css": ".ds-copy { min-height:2.5rem; padding:0.5rem 1rem; border:2px solid var(--ink); border-radius:0; background:var(--stock); color:var(--ink); font:800 1rem/1 var(--f); font-stretch:68%; letter-spacing:0.04em; text-transform:uppercase; cursor:pointer; transition:background-color 0.15s ease-out, color 0.15s ease-out; } .ds-copy:hover { background:var(--ink); color:var(--stock); } .ds-copy:focus-visible { outline:2px solid var(--spot); outline-offset:3px; }"
+    },
+    {
+      "name": "Ruled Table",
+      "kind": "card",
+      "refersTo": "table-row",
+      "description": "The catalog item list: 4px rule, label heads, hairline rows, codes in spot.",
+      "html": "<table class=\"ds-table\"><caption class=\"ds-cap\">Instant coffee</caption><thead><tr><th>UPC</th><th>Product</th><th class=\"ds-end\">Size</th></tr></thead><tbody><tr><td class=\"ds-code\">2800066678</td><td>Nescafé Gold Espresso</td><td class=\"ds-end\">3.5 oz</td></tr><tr><td class=\"ds-code\">2800018429</td><td>Nescafé Colombia</td><td class=\"ds-end\">6 oz</td></tr></tbody></table>",
+      "css": ".ds-table { width:100%; border-collapse:collapse; font:400 1rem/1.55 var(--f); font-variant-numeric:tabular-nums; color:var(--ink); } .ds-cap { padding-bottom:0.6rem; border-bottom:4px solid var(--ink); text-align:left; font:800 1.5rem/1 var(--f); font-stretch:68%; text-transform:uppercase; } .ds-table th, .ds-table td { height:2.5rem; padding:0.55rem 1.25rem 0.55rem 0; border-bottom:1px solid var(--rule); text-align:left; } .ds-table thead th { height:2rem; border-bottom:1px solid var(--ink); font:700 0.8125rem/1.2 var(--f); letter-spacing:0.12em; text-transform:uppercase; } .ds-table .ds-end { padding-right:0; text-align:right; } .ds-code { color:var(--spot); font:800 1.5rem/1 var(--f); font-stretch:68%; letter-spacing:0.01em; white-space:nowrap; }"
+    },
+    {
+      "name": "Order Slip",
+      "kind": "custom",
+      "refersTo": "order-slip",
+      "description": "The page's one solid block of spot carrying the email action.",
+      "html": "<div class=\"ds-slip\"><p class=\"ds-slip-title\">Send your list</p><p class=\"ds-slip-note\">You have stock. Reply within two working days.</p><a class=\"ds-slip-mail\" href=\"#\">george@shelfstone.com <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M3 12h17M14 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-slip { display:grid; gap:0.6rem; max-width:22rem; padding:1.25rem 1.5rem 1.4rem; background:var(--spot); color:var(--on-spot); font-family:var(--f); } .ds-slip p { margin:0; } .ds-slip-title { font:800 2rem/0.9 var(--f); font-stretch:68%; text-transform:uppercase; } .ds-slip-note { font-size:0.875rem; } .ds-slip-mail { display:flex; align-items:center; justify-content:space-between; gap:0.75rem; margin-top:0.4rem; padding-top:0.75rem; border-top:2px solid var(--on-spot); color:var(--on-spot); font:800 1.375rem/1.1 var(--f); font-stretch:80%; text-decoration:none; } .ds-slip-mail svg { transition:transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-slip-mail:hover svg { transform:translateX(4px); } .ds-slip-mail:focus-visible { outline:2px solid var(--on-spot); outline-offset:3px; }"
+    },
+    {
+      "name": "Thumb-Index",
+      "kind": "nav",
+      "refersTo": "thumb-tab",
+      "description": "Edge tabs, one per catalog page; the current one fills spot and projects past the edge.",
+      "html": "<nav class=\"ds-index\"><a class=\"ds-tab\" aria-current=\"location\" href=\"#\">Cover</a><a class=\"ds-tab\" href=\"#\">01 How</a><a class=\"ds-tab\" href=\"#\">02 Look for</a><a class=\"ds-tab\" href=\"#\">03 Wanted</a></nav>",
+      "css": ".ds-index { display:grid; grid-template-rows:repeat(4,7rem); width:3.5rem; border-left:2px solid var(--ink); background:var(--stock); } .ds-tab { position:relative; display:flex; align-items:center; justify-content:center; border-top:1px solid var(--ink); background:var(--spot-tint); color:var(--ink); font:800 0.875rem/1 var(--f); font-stretch:80%; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; white-space:nowrap; writing-mode:vertical-rl; transform:rotate(180deg); } .ds-tab:first-child { border-top:0; } .ds-tab:hover { background:var(--stock); color:var(--spot); } .ds-tab[aria-current] { background:var(--spot); color:var(--on-spot); } .ds-tab:focus-visible { outline:2px solid var(--spot); outline-offset:3px; }"
+    },
+    {
+      "name": "Running Header",
+      "kind": "nav",
+      "description": "Sticky bar: logo and name, edition stamp, email and page number over a 2px ink rule.",
+      "html": "<div class=\"ds-head\"><span class=\"ds-brand\"><svg viewBox=\"0 0 40 36\" width=\"20\" height=\"18\" aria-hidden=\"true\"><rect width=\"22\" height=\"9\" fill=\"var(--spot)\"/><rect y=\"13\" width=\"40\" height=\"9\" fill=\"currentColor\"/><rect y=\"26\" width=\"40\" height=\"9\" fill=\"currentColor\"/></svg>Shelfstone</span><span class=\"ds-lbl\">Buying list · Edition <span class=\"ds-date\">19 Oct 2026</span></span><span class=\"ds-lbl\">p. 01</span></div>",
+      "css": ".ds-head { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1.5rem; min-height:2.75rem; border-bottom:2px solid var(--ink); background:var(--stock); color:var(--ink); } .ds-brand { display:inline-flex; align-items:center; gap:0.6rem; font:800 0.8125rem/1 var(--f); letter-spacing:0.16em; text-transform:uppercase; } .ds-lbl { font:700 0.8125rem/1.3 var(--f); letter-spacing:0.12em; text-transform:uppercase; } .ds-lbl:last-child { justify-self:end; } .ds-date { color:var(--spot); }"
+    },
+    {
+      "name": "Placeholder Chip",
+      "kind": "chip",
+      "refersTo": "placeholder-chip",
+      "description": "An unknown fact shown honestly until it is filled.",
+      "html": "<p class=\"ds-p\">Write to George <span class=\"ds-todo\">Last name</span>, founder</p>",
+      "css": ".ds-p { font:400 1rem/1.55 var(--f); color:var(--ink); } .ds-todo { display:inline-block; padding:0.1em 0.5em; background:var(--spot-tint); color:var(--spot-deep); font:600 0.85em/1.45 var(--f); vertical-align:0.05em; }"
+    },
+    {
+      "name": "Empty Plate",
+      "kind": "custom",
+      "description": "A marked-out space for a photograph that does not exist yet.",
+      "html": "<figure class=\"ds-fig\"><div class=\"ds-plate\"><p class=\"ds-ph\">Photo — pallets or shelved US goods in a warehouse</p></div><figcaption class=\"ds-cap2\"><span>Fig. 01</span><span>From a few cases to full pallets</span></figcaption></figure>",
+      "css": ".ds-fig { margin:0; font-family:var(--f); } .ds-plate { display:grid; place-items:center; aspect-ratio:16/5; min-height:11rem; border:2px solid var(--ink); background:linear-gradient(to top right, transparent calc(50% - 0.5px), var(--rule) 50%, transparent calc(50% + 0.5px)), linear-gradient(to bottom right, transparent calc(50% - 0.5px), var(--rule) 50%, transparent calc(50% + 0.5px)), var(--stock); } .ds-ph { margin:0; padding:0.5rem 1rem; background:var(--stock); color:var(--muted); font-weight:600; } .ds-cap2 { display:flex; justify-content:space-between; margin-top:0.75rem; font:700 0.8125rem/1.3 var(--f); letter-spacing:0.12em; text-transform:uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Edition-Dated Buying Catalog",
+    "overview": "Shelfstone reads as a printed wholesale trade catalog: white coated stock, near-black ink and a single spot blue, laid out as numbered pages under a running header that carries the edition date and the page number. Each page is ruled and tabular. Information is set in item tables, spec sheets and procedure columns, never in floating cards. The visitor turns the pages with the thumb-index tabs fixed to the edge of the screen.\n\nDensity is that of a working price list: compact rows on one row unit, tabular figures, condensed uppercase display type set tight, and a workhorse grotesk for running text. Decoration is limited to what print uses: heavy rules, hairlines, solid ink borders, one solid block of spot colour, and an empty plate marked with crossed hairlines where a photograph has not yet been supplied. There are no shadows, no rounded corners and no gradients except the plate's diagonals.\n\nThe system turns PRODUCT.md's \"specific over vague\" and \"honest gaps\" commitments into visual rules. Codes are the most prominent thing on the page after the headline. Unknown facts appear as tinted placeholder chips and empty plates, and are never replaced with invented content.",
+    "keyCharacteristics": [
+      "White stock, near-black ink, one spot blue, which marks only things a visitor can act on and the codes we want.",
+      "Archivo variable throughout: condensed (wdth 68) heavy uppercase for display and codes, normal width for text.",
+      "Every page sits on one off-centre rail: a left column carrying the folio (page number and name), with all content registered to the rule beside it.",
+      "One row unit (2.5rem) governs table rows, gaps and section rhythm.",
+      "Ruled tables: a 4px ink rule over the block, a 1px ink rule under the head, 1px hairlines between rows.",
+      "Square everything: zero radius, 2px ink borders, no shadows.",
+      "The thumb-index is the signature: tabs fixed to the edge that track scroll, with the current tab filled in spot."
+    ],
+    "rules": [
+      {
+        "name": "The Spot Means Act Rule",
+        "body": "Spot blue appears only on what a visitor can click or copy (links, buttons, the slip, the email), on wanted codes, and on the edition date. The logo's short bar is the one brand-fixed exception. Body copy, decorative fills and illustration never take spot.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Solid Block Rule",
+        "body": "A page carries at most one solid area of spot: the order slip. Everything else in spot is type, rules or a tab.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Widths Rule",
+        "body": "Condensed 800 uppercase is for headings, codes, buttons, folio numbers and the email address set large. Everything a visitor reads as sentences is normal width at 400 to 500. Do not mix the widths within a line.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Figures are tabular everywhere, so codes, sizes and dates line up in columns.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ink Not Light Rule",
+        "body": "No box-shadow, no blur, no translucency. If something must stand forward, give it a heavier rule or a solid fill.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Three Rules Rule",
+        "body": "4px opens, 2px frames, 1px separates. Do not add a fourth weight or use a weight outside its job.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep spot for clickable things, wanted codes and the edition date, with at most one solid spot block per page.",
+      "Do put every page on the rail grid with a folio (number and page name) in the rail, under a 2px ink rule.",
+      "Do set lists as ruled tables or spec sheets: 4px opening rule, 1px ink rule under heads, hairlines between rows, rows on the 2.5rem row unit.",
+      "Do use condensed Archivo 800 uppercase for headings, codes and buttons, and normal-width Archivo for sentences, with tabular figures throughout.",
+      "Do show unknown facts as placeholder chips and missing photographs as empty crossed plates.",
+      "Do rewrite tables as stacked row blocks on phones instead of scrolling them sideways."
+    ],
+    "donts": [
+      "Don't round corners, add shadows, blurs or gradient fills; depth comes from rule weight and solid ink.",
+      "Don't introduce a second accent hue or tint the page background; every surface is white stock.",
+      "Don't set content in floating cards or a feature-card grid; use ruled columns under one heavy rule.",
+      "Don't put stock photography or invented logos, clients or figures into a plate or chip.",
+      "Don't animate the thumb-index tab change; it switches instantly."
+    ]
+  }
+}

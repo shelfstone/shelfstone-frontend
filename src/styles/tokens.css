@@ -1,39 +1,43 @@
-/* Design tokens: a technical-drawing look. Grey paper, near-black ink, hairline rules,
-   slate blue for actions and references, crop marks on framed elements. One light theme. */
+/* Design tokens: Shelfstone's printed buying catalog. White stock, near-black ink and one
+   spot blue. The blue marks only what a visitor can act on and the codes we want. */
 :root {
-  --paper: #f2f2f3;
-  --ink: #1d1f20;
-  --body: #434546;
-  --muted: #5d5f60;
-  --line: #d0d0d1;
-  --line-strong: #363839;
-  --accent: #5980a6; /* fills: primary buttons, display accents, step numbers */
-  --accent-ink: #416180; /* text: section labels, UPCs, links */
-  --on-accent: #ffffff;
-  --chip: #eef6ff;
-  --chip-ink: #2c455d;
+  --stock: #ffffff;
+  --ink: #111214;
+  --body: #2f3236;
+  --muted: #5a5f66;
+  --rule: #c9cdd2;
+  --spot: #005eb8;
+  --spot-deep: #00468a;
+  --spot-tint: #e8eff8;
+  --on-spot: #ffffff;
 
-  /* The dark band behind the wanted list */
-  --navy: #1d2d3d;
-  --navy-accent: #b5d9fd;
+  --f: "Archivo Variable", "Archivo", "Helvetica Neue", Arial, sans-serif;
+  /* Display type is Archivo pulled to its condensed width */
+  --display-stretch: 68%;
 
-  --f-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
-  --f-body: "Barlow", "Segoe UI", Helvetica, Arial, sans-serif;
+  /* Sizes grow with the screen's width; the largest also stop growing on short screens */
+  --t-small: 0.875rem;
+  --t-label: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --t-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --t-lede: clamp(1.125rem, 1rem + 0.45vw, 1.375rem);
+  --t-h3: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --t-h2: clamp(2.25rem, 1.4rem + 2.6vw, 3.75rem);
+  --t-h1: clamp(2.125rem, min(1rem + 5.2vw, 11vh), 6rem);
+  --t-code: clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem);
 
-  /* Sizes grow with the screen's width, and the largest also stop growing on short screens,
-     so a laptop shows the headline, intro and both paths without scrolling */
-  --step--1: clamp(0.875rem, 0.8rem + 0.35vw, 1.125rem); /* labels */
-  --step-0: 1.125rem; /* small text */
-  --step-1: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); /* running text */
-  --step-2: clamp(2rem, 1.2rem + 2.2vw, 3rem); /* section titles */
-  --step-3: clamp(2.5rem, min(1rem + 4.6vw, 10vh), 6rem); /* hero */
-  --step-h3: clamp(1.4rem, 1.2rem + 0.6vw, 1.85rem);
-
-  --wrap: 82rem;
-  --gutter: clamp(20px, 5vw, 64px);
-  --header-h: 4.75rem;
-  --section-space: clamp(3rem, 6vw, 6rem);
-  --mark: 14px; /* crop mark size */
+  /* One row unit: table rows, gaps and section rhythm are multiples of it */
+  --row: 2.5rem;
+  --wrap: 80rem;
+  --gutter: clamp(1rem, 4vw, 4rem);
+  --rail: clamp(9.5rem, 13vw, 12.5rem);
+  --tabs: 3.5rem;
+  --header-h: 2.75rem;
 
   color-scheme: light;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --tabs: 3.25rem;
+  }
 }
