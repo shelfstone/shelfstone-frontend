@@ -1,149 +1,292 @@
-.hero {
-  padding-block: clamp(1.75rem, 6vh, 4.5rem) var(--section-space);
+.cover {
+  padding-bottom: calc(var(--row) * 2);
 }
 
-.kickers {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.75rem 2rem;
-  color: var(--muted);
+.page {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
 }
 
-.title {
-  margin-top: clamp(1.25rem, 4vh, 2.5rem);
-  line-height: 0.88;
+.rail {
+  display: grid;
+  align-content: start;
+  gap: var(--row);
+  padding: clamp(1.5rem, 5vh, 3rem) 1.5rem 0 0;
+  border-right: 2px solid var(--ink);
+}
+
+.upc {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.upcBig {
+  color: var(--spot);
+  font: 800 clamp(3rem, 2rem + 2.8vw, 4.75rem) / 0.8 var(--f);
+  font-stretch: var(--display-stretch);
+  letter-spacing: -0.02em;
+}
+
+.body {
+  min-width: 0;
+  padding: clamp(1.5rem, 5vh, 3rem) 0 0 clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
 .accent {
-  color: var(--accent);
+  color: var(--spot);
 }
 
 .lede {
-  max-width: 40rem;
-  margin-top: clamp(1.25rem, 4vh, 2.75rem);
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
-  line-height: 1.55;
+  max-width: 38rem;
+  margin-top: clamp(1rem, 3vh, 1.75rem);
+  font-size: var(--t-lede);
+  line-height: 1.45;
 }
 
-/* Two ways in, side by side between rules */
-.paths {
+/* The wanted codes and the order slip, side by side */
+.order {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: clamp(1.5rem, 5vh, 3rem);
-  border-top: 1px solid var(--line-strong);
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem);
+  align-items: start;
+  gap: var(--row);
+  margin-top: clamp(1.5rem, 4.5vh, 2.5rem);
 }
 
-.path {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 0.9rem 1rem;
-  padding-block: clamp(1.1rem, 3.5vh, 2rem);
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.path:first-child {
-  padding-right: clamp(1.25rem, 2.5vw, 2rem);
-}
-
-.path + .path {
-  padding-left: clamp(1.25rem, 2.5vw, 2rem);
-  border-left: 1px solid var(--line);
-}
-
-.pathLabel {
-  grid-column: 1 / -1;
-  color: var(--muted);
-}
-
-.pathTitle,
-.arrow {
-  font: 600 clamp(1.5rem, 1.1rem + 1vw, 2.1rem) / 1 var(--f-display);
+/* The two ways in are lettered like catalog sections: A on the slip, B on the table */
+.caption {
+  font: 800 clamp(1.5rem, 1.2rem + 0.9vw, 2rem) / 1 var(--f);
+  font-stretch: var(--display-stretch);
   text-transform: uppercase;
 }
 
-.arrow {
-  color: var(--accent);
-  transition: transform 0.15s ease;
+.letter {
+  display: inline-grid;
+  place-items: center;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.3em;
+  border: 2px solid currentColor;
+  font-size: 0.8em;
+  vertical-align: 0.1em;
 }
 
-.path:hover .pathTitle {
-  color: var(--accent-ink);
+.buying td:nth-child(2) {
+  white-space: nowrap;
 }
 
-.path:hover .arrow {
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font: 800 1.125rem / 1 var(--f);
+  font-stretch: var(--display-stretch);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.more svg,
+.mail svg {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.more:hover svg,
+.mail:hover svg {
   transform: translateX(4px);
 }
 
-/* The photo, or a marked-out space for it until there is one */
-.figure {
-  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+/* The order slip: the page's one solid block of spot colour */
+.slip {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.25rem 1.5rem 1.4rem;
+  background: var(--spot);
+  color: var(--on-spot);
 }
 
-.photo {
-  position: relative;
+.slipTitle {
+  font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
+}
+
+.slipNote {
+  font-size: var(--t-small);
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--on-spot);
+  color: var(--on-spot);
+  font: 800 clamp(1.05rem, 0.6rem + 0.9vw, 1.5rem) / 1.1 var(--f);
+  font-stretch: 80%;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.mail:hover {
+  color: var(--on-spot);
+}
+
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  font-size: var(--t-small);
+}
+
+.files a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--on-spot);
+}
+
+.slip ::selection {
+  background: var(--on-spot);
+  color: var(--spot);
+}
+
+.slip :focus-visible {
+  outline-color: var(--on-spot);
+}
+
+/* Fig. 01: a printed plate, or a marked-out space for it until there is a photo */
+.figure {
+  margin: calc(var(--row) * 1.5) 0 0;
+}
+
+.plate {
   display: grid;
   place-items: center;
-  aspect-ratio: 21 / 8;
-  min-height: 12rem;
-  border: 1px dashed var(--accent);
-  background: var(--chip);
+  aspect-ratio: 16 / 5;
+  min-height: 11rem;
+  border: 2px solid var(--ink);
+  /* An empty printed plate: white stock crossed by two hairline diagonals */
+  background:
+    linear-gradient(
+      to top right,
+      transparent calc(50% - 0.5px),
+      var(--rule) 50%,
+      transparent calc(50% + 0.5px)
+    ),
+    linear-gradient(
+      to bottom right,
+      transparent calc(50% - 0.5px),
+      var(--rule) 50%,
+      transparent calc(50% + 0.5px)
+    ),
+    var(--stock);
 }
 
-.photo img {
+.plate img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .placeholder {
-  display: grid;
-  justify-items: center;
-  gap: 0.75rem;
-  padding: 1.5rem;
-  color: var(--chip-ink);
-  font-size: var(--step-0);
+  padding: 0.5rem 1rem;
+  background: var(--stock);
+  color: var(--muted);
+  font-weight: 600;
   text-align: center;
 }
 
-.placeholder svg {
-  width: 36px;
-  height: 36px;
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.caption {
+.figCaption {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.5rem 2rem;
-  margin-top: 1.25rem;
-  color: var(--muted);
+  margin-top: 0.75rem;
 }
 
-@media (max-width: 600px) {
-  .paths {
+/* Smaller desktops: a narrower slip so every cover row stays on one line */
+@media (max-width: 1200px) {
+  .order {
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+    gap: 1.5rem;
+  }
+}
+
+/* Short laptop windows: tighter vertical rhythm so the cover rows clear the fold */
+@media (max-height: 640px) and (min-width: 1000px) {
+  .rail,
+  .body {
+    padding-top: 1.25rem;
+  }
+
+  .rail {
+    gap: 1.25rem;
+  }
+
+  .lede {
+    margin-top: 0.75rem;
+  }
+
+  .order {
+    margin-top: 1rem;
+  }
+
+  .buying td {
+    height: 2rem;
+    padding-block: 0.3rem;
+  }
+}
+
+@media (max-width: 999px) {
+  .order {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .path:first-child {
-    padding-right: 0;
+  /* The action comes before the proof once they stack */
+  .slip {
+    order: -1;
+    max-width: 30rem;
   }
 
-  .path + .path {
-    padding-left: 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
+  .mail {
+    font-size: 1.375rem;
+  }
+}
+
+/* Phones and tablets: the rail notes move above the headline */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .photo {
+  .rail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.25rem;
+    padding: 1.25rem 0 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .upc {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  .upcBig {
+    font-size: var(--t-label);
+    font-stretch: 100%;
+    letter-spacing: 0.12em;
+  }
+
+  .body {
+    padding: 1.5rem 0 0;
+  }
+
+  .plate {
     aspect-ratio: 4 / 3;
   }
 }

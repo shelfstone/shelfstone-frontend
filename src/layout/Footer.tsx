@@ -5,13 +5,14 @@ import { site, templateFiles } from "../content/site";
 import { wantedTrademarks } from "../content/wanted";
 import styles from "./Footer.module.css";
 
+/** The catalog's back cover: what we do, the index, contact and the legal small print. */
 export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="wrap">
         <div className={styles.columns}>
           <div className={styles.about}>
-            <Link className={styles.brand} to="/">
+            <Link className={styles.brand} to="/#top">
               <Logo className={styles.logo} />
               <span>{site.name}</span>
             </Link>
@@ -44,7 +45,7 @@ export function Footer() {
             </a>
           </nav>
 
-          <div className={`${styles.column} ${styles.contact}`}>
+          <div className={styles.column}>
             <h2 className={`label ${styles.heading}`}>Contact</h2>
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <p className={styles.muted}>Reply {site.replyTime.toLowerCase()}</p>
@@ -64,10 +65,8 @@ export function Footer() {
 
         <p className={styles.fine}>
           {wantedTrademarks} Brand names and trademarks on this site belong to their owners.{" "}
-          <span className="line">
-            {site.name} is an independent buyer and is not affiliated with, or endorsed by, the
-            brands whose products it buys.
-          </span>
+          {site.name} is an independent buyer and is not affiliated with, or endorsed by, the brands
+          whose products it buys.
         </p>
       </div>
     </footer>

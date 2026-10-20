@@ -1,5 +1,4 @@
-import { Arrow } from "../../components/ButtonLink";
-import { CropMarks } from "../../components/CropMarks";
+import { Icon } from "../../components/Icon";
 import { Section } from "../../components/Section";
 import { listFields } from "../../content/home";
 import { templateFiles } from "../../content/site";
@@ -9,15 +8,15 @@ export function SendListSection() {
   return (
     <Section
       id="send"
-      number={4}
+      number="04"
       label="Send your list"
       aside={
         <>
           <a className={styles.download} href={templateFiles.xlsx} download>
-            Template — Excel <Arrow direction="down" />
+            Template — Excel <Icon name="arrow-down" />
           </a>
           <a className={styles.download} href={templateFiles.csv} download>
-            Template — CSV <Arrow direction="down" />
+            Template — CSV <Icon name="arrow-down" />
           </a>
         </>
       }
@@ -28,8 +27,7 @@ export function SendListSection() {
         a firm offer instead of more questions.
       </p>
 
-      <div className={`frame ${styles.box}`}>
-        <CropMarks />
+      <div className={`table-scroll ${styles.box}`}>
         <table className={`data-table ${styles.fields}`}>
           <thead>
             <tr>
@@ -42,7 +40,7 @@ export function SendListSection() {
           <tbody>
             {listFields.map((row, index) => (
               <tr key={row.field}>
-                <td className={`num ${styles.number}`}>{String(index + 1).padStart(2, "0")}</td>
+                <td className={styles.number}>{String(index + 1).padStart(2, "0")}</td>
                 <th scope="row">{row.field}</th>
                 <td className={styles.why}>{row.why}</td>
                 <td className={styles.example}>{row.example}</td>

@@ -23,13 +23,19 @@ Node 20 or newer.
 | `src/content/`          | All site text and data: company facts (`site.ts`), the wanted list (`wanted.ts`), home page lists (`home.ts`) |
 | `src/pages/`            | The home page (one page: the hero, then sections 01–05, in `src/pages/home/`), privacy and 404                |
 | `src/layout/`           | Header (with the phone menu), footer and the shared page layout                                               |
-| `src/components/`       | Small reusable pieces: crop marks, button links, numbered sections, logo, copy button                         |
+| `src/components/`       | Small reusable pieces: icons, button links, numbered sections, logo, copy button                              |
 | `src/styles/tokens.css` | Colours, fonts and type scale                                                                                 |
-| `src/styles/global.css` | Base styles and the few shared classes (`.wrap`, `.btn`, `.label`, `.frame`, tables)                          |
+| `src/styles/global.css` | Base styles and the few shared classes (`.wrap`, `.btn`, `.label`, `.code`, tables)                           |
 | `public/files/`         | The stock list template suppliers download (Excel and CSV)                                                    |
 
-Each component keeps its own styles in a `*.module.css` file next to it. Fonts (Barlow and
-Barlow Condensed) are self-hosted from npm, so no requests go to Google Fonts.
+Each component keeps its own styles in a `*.module.css` file next to it. The font (Archivo, with
+its width axis for the condensed headings) is self-hosted from npm, so no requests go to Google
+Fonts.
+
+The look is a printed buying catalog: white stock, black ink and one spot blue used only for
+things a visitor can act on and the UPCs we want. The section list in `src/content/sections.ts`
+drives the thumb-index tabs and the page number in the running header. `PRODUCT.md`, `DESIGN.md`
+and `.impeccable/` hold the design context used by the Impeccable design skill.
 
 ## Common edits
 

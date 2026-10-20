@@ -6,7 +6,7 @@ import styles from "./AboutSection.module.css";
 
 export function AboutSection() {
   return (
-    <Section id="about" number={5} label="About us">
+    <Section id="about" number="05" label="About us">
       <p className={styles.statement}>
         Shelfstone is a small, independent sourcing company. We are building a network of
         distributors and wholesalers who hold American products around the world, and we buy from

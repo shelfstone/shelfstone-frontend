@@ -1,9 +1,11 @@
-/* An unknown fact, shown as a chip until it is filled in src/content/site.ts */
+/* An unknown fact, shown as a tinted chip until it is filled in src/content/site.ts */
 .todo {
   display: inline-block;
-  padding: 0.15em 0.6em;
-  background: var(--chip);
-  color: var(--chip-ink);
-  font: 500 0.85em / 1.4 var(--f-body);
+  padding: 0.1em 0.5em;
+  background: var(--spot-tint);
+  color: var(--spot-deep);
+  font: 600 0.85em / 1.45 var(--f);
+  letter-spacing: 0;
+  text-transform: none;
   vertical-align: 0.05em;
 }

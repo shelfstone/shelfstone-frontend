@@ -1,3 +1,10 @@
 .DS_Store
 node_modules
 dist
+
+# Impeccable working files (the direction brief and design.json stay tracked)
+.impeccable/mocks
+.impeccable/questions
+.impeccable/review
+.impeccable/hook.cache.json
+.impeccable/config.local.json
